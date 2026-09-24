@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Denys",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 183, "left": 9, "attrs": {} },
+    {
+      "type": "chip-bmp280",
+      "id": "chip1",
+      "top": -36.2,
+      "left": 92.22,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "board-bmp180", "id": "bmp1", "top": 216.64, "left": -153.34, "attrs": {} }
+  ],
+  "connections": [
+    [ "chip1:SCK", "uno:13", "white", [ "v0" ] ],
+    [ "chip1:SDI", "uno:11", "limegreen", [ "v48", "h9" ] ],
+    [ "chip1:CS", "uno:10", "gold", [ "v38.4", "h8.9" ] ],
+    [ "uno:12", "chip1:SDO", "orange", [ "v-19.2", "h29.3", "v-38.4", "h-9.6" ] ],
+    [ "chip1:GND", "uno:GND.1", "black", [ "v0" ] ],
+    [ "chip1:VCC", "uno:5V", "red", [ "v67.2", "h-115.2", "v220.8", "h163.2" ] ],
+    [ "uno:3.3V", "bmp1:3.3V", "green", [ "v0" ] ],
+    [ "bmp1:GND", "uno:GND.2", "black", [ "h0" ] ],
+    [ "bmp1:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "bmp1:SCL", "uno:A5", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
